@@ -182,12 +182,19 @@ class geographical_cell : public cell<T, string, sevirds, vicinity>
                 {
                     new_s -= data.get()->GetTotalExposed();
                     sanity_check(new_s, __LINE__);
+
                     new_s -= data.get()->GetTotalInfected();
                     sanity_check(new_s, __LINE__);
+
                     new_s -= data.get()->GetTotalRecovered();
                     sanity_check(new_s, __LINE__);
 
-                    res.fatalities.at(age_segment_index) += data.get()->GetTotalFatalities();
+                    // Using the total is currently broken but is the ideal as it removes the need
+                    // to loop every cycle
+                    //res.fatalities.at(age_segment_index) += data.get()->GetTotalFatalities();
+                    // For some reason doing this loop gives the correct result when the Total does not
+                    for (unsigned int q = 0; q < data.get()->GetInfectedPhase(); ++q)
+                        res.fatalities.at(age_segment_index) += data.get()->GetNewFatalities(q);
                     sanity_check(res.fatalities.at(age_segment_index), __LINE__);
                 }
 
