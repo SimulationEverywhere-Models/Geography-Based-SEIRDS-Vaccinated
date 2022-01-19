@@ -219,8 +219,8 @@ try:
 
         axs[0].plot(x, 100*df_vis["susceptible"], label="Susceptible", color=COLOR_SUSCEPTIBLE, linestyle=STYLE_SUSCEPTIBLE)
         if not (sum(df_vis['vaccinatedD1']) == 0 and sum(df_vis['vaccinatedD2']) == 0):
-            axs[0].plot(x, 100*df_vis["vaccinatedD1"], label="Vaccinated 1 Dose",  color=COLOR_DOSE1, linestyle=STYLE_DOSE1)
-            axs[0].plot(x, 100*df_vis["vaccinatedD2"], label="Vaccinated 2 Doses", color=COLOR_DOSE2, linestyle=STYLE_DOSE2)
+            axs[0].plot(x, 100*df_vis["vaccinatedD1"], label="Vaccinated D1", color=COLOR_DOSE1, linestyle=STYLE_DOSE1)
+            axs[0].plot(x, 100*df_vis["vaccinatedD2"], label="Vaccinated D2", color=COLOR_DOSE2, linestyle=STYLE_DOSE2)
             axs[0].set_title("Epidemic Aggregate SEVIRD Percentages")
         else:
             axs[0].set_title("Epidemic Aggregate SEIR+D Percentages")
@@ -231,7 +231,7 @@ try:
         axs[0].set_ylabel("Population (%)")
         axs[0].legend(loc="upper right")
 
-        axs[1].plot(x, 100*df_vis["deaths"],   label="Deaths",   color=COLOR_DEAD,     linestyle=STYLE_DEAD)
+        axs[1].plot(x, 100*df_vis["deaths"],   label="Deceased", color=COLOR_DEAD,     linestyle=STYLE_DEAD)
         axs[1].plot(x, 100*df_vis["exposed"],  label="Exposed",  color=COLOR_EXPOSED,  linestyle=STYLE_EXPOSED)
         axs[1].plot(x, 100*df_vis["infected"], label="Infected", color=COLOR_INFECTED, linestyle=STYLE_INFECTED)
         axs[1].set_xlabel("Time (days)")

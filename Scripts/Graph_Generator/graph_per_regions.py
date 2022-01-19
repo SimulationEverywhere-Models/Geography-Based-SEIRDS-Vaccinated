@@ -165,8 +165,8 @@ try:
         axs.plot(x, 100*df_vis_p["recovered"],   label="Recovered",   color=COLOR_RECOVERED,   linestyle=STYLE_RECOVERED)
         axs.plot(x, 100*df_vis_p["deaths"],      label="Deaths",      color=COLOR_DEAD,        linestyle=STYLE_DEAD)
         if vaccines:
-            axs.plot(x, 100*df_vis_p["vaccinatedD1"], label="Vaccinated 1 dose", color=COLOR_DOSE1, linestyle=STYLE_DOSE1)
-            axs.plot(x, 100*df_vis_p["vaccinatedD2"], label="Vaccinated 2 dose", color=COLOR_DOSE2, linestyle=STYLE_DOSE2)
+            axs.plot(x, 100*df_vis_p["vaccinatedD1"], label="Vaccinated D1", color=COLOR_DOSE1, linestyle=STYLE_DOSE1)
+            axs.plot(x, 100*df_vis_p["vaccinatedD2"], label="Vaccinated D2", color=COLOR_DOSE2, linestyle=STYLE_DOSE2)
             axs.set_title('Epidemic SEVIRD Percentages for ' + foldername + " (pop=" + str(int(curr_states[region_key][0])) + ")")
         else:
             axs.set_title('Epidemic SEIRD Percentages for ' + foldername + " (pop=" + str(int(curr_states[region_key][0])) + ")")
@@ -184,7 +184,7 @@ try:
 
         axs.plot(t, 100*df_vis_p["exposed"],  label="Exposed",  color=COLOR_EXPOSED,  linestyle=STYLE_EXPOSED)
         axs.plot(t, 100*df_vis_p["infected"], label="Infected", color=COLOR_INFECTED, linestyle=STYLE_INFECTED)
-        axs.plot(t, 100*df_vis_p["deaths"],   label="Deaths",   color=COLOR_DEAD,     linestyle=STYLE_DEAD)
+        axs.plot(t, 100*df_vis_p["deaths"],   label="Deceased", color=COLOR_DEAD,     linestyle=STYLE_DEAD)
         axs.set_ylabel("Population (%)")
         axs.set_title("Epidemic EID Percentages for " + foldername + " (pop=" + str(int(curr_states[region_key][0])) + ")")
         axs.legend(loc="upper right")
